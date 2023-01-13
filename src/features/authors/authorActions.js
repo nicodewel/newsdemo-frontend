@@ -5,7 +5,6 @@ export const POST_AUTHOR = "POST_AUTHOR"
 const api = new Api();
 
 export const getAllAuthors = () => async (dispatch) => {
-
     const res = await api.api.getAllAuthors();
     const payload = await res.json();
     dispatch({
@@ -16,7 +15,7 @@ export const getAllAuthors = () => async (dispatch) => {
 
 export const postAuthor = (author) => async (dispatch) => {
 
-    const res = await api.api.postAuthor();
+    const res = await api.api.postAuthor(author);
     const payload = await res.json();
 
     dispatch({

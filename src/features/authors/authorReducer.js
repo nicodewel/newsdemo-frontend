@@ -1,16 +1,16 @@
 import { GET_AUTHORS, POST_AUTHOR } from "./authorActions";
 
-let initialState = {
-    authors: [],
-};
+let initialState = [];
 
 const AuthorReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_AUTHORS:
-            nextState = { authors: action.payload };
-            return nextState;
+            return action.payload;
         case POST_AUTHOR:
-            nextState = { authors: [...authors, action.payload] };
-            return nextState;
+            return [...state, action.payload];
+        default:
+            return state;
     }
 }
+
+export default AuthorReducer;

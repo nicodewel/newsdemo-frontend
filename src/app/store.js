@@ -1,8 +1,9 @@
 import { configureStore, } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import rootReducer from '../reducer';
+import logger from 'redux-logger'
+import thunk from 'redux-thunk'
 
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+  reducer: rootReducer,
+  middleware: [logger, thunk],
 });
